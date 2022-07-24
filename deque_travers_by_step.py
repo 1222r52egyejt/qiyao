@@ -1,18 +1,30 @@
 # import sys
 from collections import deque
 import json
-from turtle import circle
+import zipfile
 
-with open("test.json", "r") as json_file:
-        circle = json.load(json_file)
-        # print(json_dict)
-        # print("type(json_dict) = >", type(json_dict))
-        # print(json.dumps(json_dict, indent=4))
 
+# #使用json库打开json文件中的内容
+# with open("test.json", "r") as json_file:
+#         circle = json.load(json_file)
+        
+
+#使用zip库打开zip文件中的内容
+#读取zip文件
+f = zipfile.ZipFile('yasuo.zip')        #首先，通过zipfile.ZipFile()函数，创建ZipFile对象。
+
+#解压zip文件
+f.extractall('jieya')         #也可以向该方法传递一个文件夹名称，它将解压后的文件都放到这个文件夹中。
+
+with open("jieya/yasuo/hello.txt", "r+", encoding='utf-8') as f:
+        circle_in_document = f.readline()
+        circle = circle_in_document.split(',')
+
+##
 
 class public:
      def traverse(self, stepNum, start_id):
-        data = deque(circle)
+        data = deque(list(circle))
         # data = deque()
         # for i in range(44444):
         #     data.append(i)
