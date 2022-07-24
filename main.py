@@ -1,7 +1,7 @@
-from deque_travers_by_step import JosephusRing
-from deque_travers_by_step import Person
-# from list_travers_by_step import JosephusRing
-# from list_travers_by_step import Person
+# from deque_travers_by_step import JosephusRing
+# from deque_travers_by_step import Person
+from list_travers_by_step import JosephusRing
+from list_travers_by_step import Person
 
 
 

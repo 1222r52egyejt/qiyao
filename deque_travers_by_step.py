@@ -1,19 +1,25 @@
 # import sys
 from collections import deque
+import json
+from turtle import circle
 
-# from turtle import circle
+with open("test.json", "r") as json_file:
+        circle = json.load(json_file)
+        # print(json_dict)
+        # print("type(json_dict) = >", type(json_dict))
+        # print(json.dumps(json_dict, indent=4))
+
+
 class public:
      def traverse(self, stepNum, start_id):
-    #  def choiceNum(self, stepNum, start_id, maxNum):    
-        # data = deque(['小明', '小梅', '小李', '小王', '小陈', 'kitty', 'hellokitty', '小红','曹总', '小曹' ])
-        # data = deque(range(maxNum))
-        # data = deque(range(44444))
-        data = deque(self.name)
+        data = deque(circle)
+        # data = deque()
+        # for i in range(44444):
+        #     data.append(i)
         delData = deque()
         if 0 <= start_id < len(data):
             data.rotate(-(start_id))
         elif start_id >= len(data):
-        # data.rotate(-(len(data) - start_id - 1))
             data.rotate(-(start_id % len(data)))
         else :
             # print('输入错误')
@@ -22,7 +28,6 @@ class public:
 
         while len(data) > 1:
             data.rotate(-(stepNum-1)) #左移stepNum-1次
-            #delData.append(data[0])
             delData.append(data[0])
             data.popleft()      #删除第stepNum元素
         return  (delData, data[0])
@@ -41,33 +46,7 @@ class JosephusRing(public):
 
     def add_member(self, obj: Person):
         self.name.append(obj.name)
-    # public_use.add_member(obj= Person)
-        
-    # def traverse(self, stepNum, start_id):
-    # #  def choiceNum(self, stepNum, start_id, maxNum):    
-    #     # data = deque(['小明', '小梅', '小李', '小王', '小陈', 'kitty', 'hellokitty', '小红','曹总', '小曹' ])
-    #     # data = deque(range(maxNum))
-    #     # data = deque(range(44444))
-    #     data = deque(self.name)
-    #     delData = deque()
-    #     if 0 <= start_id < len(data):
-    #         data.rotate(-(start_id))
-    #     elif start_id >= len(data):
-    #     # data.rotate(-(len(data) - start_id - 1))
-    #         data.rotate(-(start_id % len(data)))
-    #     else :
-    #         # print('输入错误')
-    #         # sys.exit(1)
-    #         data.rotate(-(start_id % len(data) + len(data) + 1))
-
-    #     while len(data) > 1:
-    #         data.rotate(-(stepNum-1)) #左移stepNum-1次
-    #         #delData.append(data[0])
-    #         delData.append(data[0])
-    #         data.popleft()      #删除第stepNum元素
-    #     return  (delData, data[0])
-      
-# if __name__ == '_main_':
-#     public.traverse() 
-
+    
+if __name__ == '_main_':
+    JosephusRing.traverse() 
 
