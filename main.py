@@ -22,11 +22,18 @@ classA.add_member(F)
 classA.add_member(G)
 
 
-    # print(list(classA.name))
-print(classA.traverse(3, 0))
+    # print(list(classA.name))3
+# 最后调用
+if __name__ == '__main__':
+    while True:
+        try:
+            stepNum = int(input("请输入跳过的人数："))
+            start_id = int(input("请输入起始的人数："))
+            print(classA.traverse(stepNum , start_id ))
+        except:
+            print("请输入正确的数字格式：")
+        else:
+            break
 
-    # print(classA.traverse(3))
-if __name__ == '_main_':
-    JosephusRing.traverse() 
 
 

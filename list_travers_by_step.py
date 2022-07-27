@@ -2,30 +2,31 @@ from deque_travers_by_step import Person
 from deque_travers_by_step import circle
 
 
-class public_use:
+class public_traverse:
     def traverse(self, stepNum, start_id):   
-        data = []
+        traverse_data = []
         del_data = []
         num = 0
         start_id  += 0
         #delay(2)
         for i in (circle):
-            data.append(i)
+            traverse_data.append(i)
+        # traverse_data = iter(circle)    
         # for i in range(44444):
-        #     data.append(i)
+        #     traverse_data.append(i)
 
-        while len(data) > 1:
+        while len(traverse_data) > 1:
             num += 1
-            temp = data.pop(0)
+            temp = traverse_data.pop(0)
             if num == stepNum:
                 del_data.append(temp)
                 num = 0
             else:
-                data.append(temp)
-        return(del_data, data[0])
+                traverse_data.append(temp)
+        return(del_data, traverse_data[0])
 
 
-class JosephusRing(public_use):
+class JosephusRing(public_traverse):
     
     def __init__(self)-> None:
         self.name = []
