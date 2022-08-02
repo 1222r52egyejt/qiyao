@@ -5,22 +5,43 @@ from json import dumps
 
 from zipfile import ZipFile
 
-# 读取json文件
+class jsonreader:
+        def __init__(self, json_filename):
+                self.json_filename = json_filename
+        def json_reader(self):
+                with open(self.json_filename) as json_dict: 
+                        jsonReader = load(json_dict)
+                return jsonReader
+classB = jsonreader("test.json")
+# print(classB.json_reader())
 
-with open("test.json", "r") as json_file:
-        json_dict = load(json_file)
-        print(json_dict)
-        print("type(json_dict) = >", type(json_dict))
-        print(dumps(json_dict, indent=4))
+# class zipreader:
+#         def __init__(self, zip_filename):
+#                 self.yasuo = zip_filename
+#         def zip_reader(self):
+#                 zip_dict = ZipFile('self.yasuo') #这里把yasuo换成了self.zip_filename
+#                 zip_dict.extractall('jieya')
+#                 with open("jieya/self.yasuo/hello.txt", "r+", encoding='utf-8') as zip_dict:
+#                         zip_reader = zip_dict.readline()
+#                 return zip_reader                                          
+# # # 读取json文件
+
+# with open("test.json", "r") as json_file:
+#         json_dict = load(json_file)
+#         print(json_dict)
+#         print("type(json_dict) = >", type(json_dict))
+#         print(dumps(json_dict, indent=4))
 
 
 #创建并写入json文件
 
-dict = ['小明', '小梅', '小李', '小王', '小陈', 'kitty', 'hellokitty', '小红','曹总', '小曹' ]
+# dict = ['小明', '小梅', '小李', '小王', '小陈', 'kitty', 'hellokitty', '小红','曹总', '小曹' ]
 
-with open("test.json", "w") as json_file:
-        json_dict = dump(dict, json_file)
+# # with open("test.json", "w") as json_file:
+# #         json_dict = dump(dict, json_file)
 
+# with open("self.json_filename", "w") as json_file:
+#         json_dict = dump(dict, json_file)
 
 
 # #读取zip文件

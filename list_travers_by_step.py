@@ -1,6 +1,6 @@
 from deque_travers_by_step import Person
-from deque_travers_by_step import circle
-
+# from deque_travers_by_step import circle
+from json_zip import classB
 
 class public_traverse:
     def traverse(self, stepNum, start_id):   
@@ -9,9 +9,10 @@ class public_traverse:
         num = 0
         start_id  += 0
         #delay(2)
-        for i in (circle):
-            traverse_data.append(i)
-        # traverse_data = iter(circle)    
+        # for i in (circle):
+        #     traverse_data.append(i)
+        # traverse_data = iter(classB.json_reader())    
+        traverse_data = list(classB.json_reader())   
         # for i in range(44444):
         #     traverse_data.append(i)
 

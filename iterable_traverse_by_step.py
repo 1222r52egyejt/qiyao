@@ -5,7 +5,7 @@ from deque_travers_by_step import circle
 class MyList():
     
     def __init__(self, stepNum):
-        # self.x： 用来记录迭代器每次迭代的位置
+        # self.index： 用来记录迭代器每次迭代的位置
         
         self.index, self.del_data, self.traverse_data, self.stepNum = 0, 'xiexie', deque(circle), stepNum
         
@@ -14,10 +14,8 @@ class MyList():
         # 该方法要返回一个迭代器对象，因为自己就是迭代器，所有返回自身实例self
         return self
     
-    # 要想成为迭代器，必须实现next方法，并且返回每次迭代出来的数据
+    
     def __next__(self):
-        # 在这里其其实self.num就是用户传过来的要查找的位数，那么也就是长度
-        # 那么迭代器迭代的位置索引肯定不能大于长度
  
         if self.index < len(circle):
             

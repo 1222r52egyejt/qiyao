@@ -1,7 +1,7 @@
-# from deque_travers_by_step import JosephusRing
-# from deque_travers_by_step import Person
-from list_travers_by_step import JosephusRing
-from list_travers_by_step import Person
+from deque_travers_by_step import JosephusRing
+from deque_travers_by_step import Person
+# from list_travers_by_step import JosephusRing
+# from list_travers_by_step import Person
 
 
 
@@ -22,14 +22,14 @@ classA.add_member(F)
 classA.add_member(G)
 
 
-    # print(list(classA.name))3
+# print(classA.traverse(3 , 0))
 # 最后调用
 if __name__ == '__main__':
     while True:
         try:
             stepNum = int(input("请输入跳过的人数："))
             start_id = int(input("请输入起始的人数："))
-            print(classA.traverse(stepNum , start_id ))
+            print(classA.traverse(stepNum , start_id))
         except:
             print("请输入正确的数字格式：")
         else:
