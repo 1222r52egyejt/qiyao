@@ -45,7 +45,8 @@ class public_traverse:
             traverse_data.rotate(-(stepNum-1))  # 左移stepNum-1次
             delData.append(traverse_data[0])
             traverse_data.popleft()  # 删除第stepNum元素
-        return (delData, traverse_data[0])
+            result = traverse_data[0].split()
+        return (list(delData)+ result)
 
 
 class Person:
