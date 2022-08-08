@@ -6,39 +6,69 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>557</width>
-    <height>476</height>
+    <width>518</width>
+    <height>459</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>统计薪资</string>
+   <string>约瑟夫环信息输入</string>
   </property>
-  <widget class="QPlainTextEdit" name="TextEdit">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>60</y>
-     <width>391</width>
-     <height>281</height>
-    </rect>
-   </property>
-   <property name="placeholderText">
-    <string>请输入薪资信息</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="Button">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>380</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>统计</string>
-   </property>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPlainTextEdit" name="TextEdit">
+       <property name="placeholderText">
+        <string>请输入进行约瑟夫遍历的人名</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QSpinBox" name="spinBox_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>-99</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Button">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>统计</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

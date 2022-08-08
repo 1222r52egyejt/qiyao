@@ -28,36 +28,39 @@ class Stats:
     # def traverse(self, stepNum, start_id):
         
         info = self.ui.TextEdit.toPlainText()
-       
+        stepNum = self.ui.spinBox.value()
+        start_id = self.ui.spinBox_2.value()
         traverse_data = info.splitlines()
         for i in range(len(traverse_data)):
             traverse_data[i] = traverse_data[i].strip()
-           
-        print(traverse_data)
-    #     delData = deque()
-    #     if 0 <= start_id < len(traverse_data):
-    #         traverse_data.rotate(-(start_id))
-    #     elif start_id >= len(traverse_data):
-    #         traverse_data.rotate(-(start_id % len(traverse_data)))
-    #     else:
-    #         # print('输入错误')
-    #         # sys.exit(1)
-    #         traverse_data.rotate(-(start_id %
-    #                              len(traverse_data) + len(traverse_data) + 1))
-
-    #     while len(traverse_data) > 1:
-    #         traverse_data.rotate(-(stepNum-1))  # 左移stepNum-1次
-    #         delData.append(traverse_data[0])
-    #         traverse_data.popleft()  # 删除第stepNum元素
-    #         result = traverse_data[0].split()
-    #     return (list(delData)+ result)  
-
-
-    # # QMessageBox.about(self.ui,
-    # #                 '统计结果',
-    # #                 f'''薪资20000 以上的有：\n{delData}
-    # #                 \n薪资20000 以下的有：\n{result}'''
-    # #                 )
+            
+        # print(traverse_data)
+        delData = deque()
+        traverse_data = deque(traverse_data)
+    # print(traverse_data)
+        if 0 <= start_id < len(traverse_data):
+            traverse_data.rotate(-(start_id) - 1)
+        elif start_id >= len(traverse_data):
+            traverse_data.rotate(-(start_id % len(traverse_data) + 1))
+        else:
+            # print('输入错误')
+            # sys.exit(1)
+            traverse_data.rotate(-(start_id %
+                                    len(traverse_data) + len(traverse_data) + 1))
+        
+        while len(traverse_data) > 1:
+            traverse_data.rotate(-(stepNum-1))  # 左移stepNum-1次
+            # traverse_data.rotate(-(3-1))  # 左移stepNum-1次
+            delData.append(traverse_data[0])
+            traverse_data.popleft()  # 删除第stepNum元素
+            result = traverse_data[0].split()
+        # return (result)  
+    
+        QMessageBox.about(self.ui,
+                            '统计结果',
+                            f'''淘汰顺序为：\n{list(delData)}
+                            \n最后剩下的是：\n{result}'''
+                            )
 
 app = QApplication([])
 stats = Stats()
