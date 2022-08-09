@@ -8,12 +8,17 @@ from json_zip import classB
 import os
 from collections import deque
 path = os.path.realpath(os.curdir)#获取当前目录的绝对路径
+
+import sys
+from PySide2.QtCore import *
+from PySide2.QtWidgets import *
+from PySide2.QtGui import *
 # self.ui = QUiLoader().load(path+'/ui/main.ui')
 # print(path)
 # print(classB.json_reader())
-class Stats:
+class Stats(QWidget):
 
-    def __init__(self):
+    def __init__(self,parent=None):
        
 # 从文件中加载UI定义  
         qfile_stats = QFile(path+'/Desktop/qiyao/Graphical interface/stats.ui')
@@ -26,7 +31,7 @@ class Stats:
 
         # self.ui.button.clicked.connect(self.handleCalc)
         self.ui.Button.clicked.connect(self.traverse)
-       
+        self.ui.pushButton.clicked.connect(self.getFiles)
            
     def traverse(self):
     # def traverse(self, stepNum, start_id):
@@ -70,7 +75,7 @@ class Stats:
             traverse_data.popleft()  # 删除第stepNum元素
             result = traverse_data[0].split()
         # return (result)  
-    
+
         QMessageBox.about(self.ui,
                             '统计结果',
                             f'''淘汰顺序为：\n{list(delData)}
@@ -78,7 +83,37 @@ class Stats:
                             )
 
 
-app = QApplication([])
-stats = Stats()
-stats.ui.show()
-app.exec_()
+    def getFiles(self):
+        #实例化QFileDialog
+        dig=QFileDialog()
+        #设置可以打开任何文件
+        dig.setFileMode(QFileDialog.AnyFile)
+        #文件过滤
+        dig.setFilter(QDir.Files)
+
+        if dig.exec_():
+            #接受选中文件的路径，默认为列表
+            filenames=dig.selectedFiles()
+            #列表中的第一个元素即是文件路径，以只读的方式打开文件
+            f=open(filenames[0],'r',encoding="UTF-8")
+
+            with f:
+                #接受读取的内容，并显示到多行文本框中
+                data=f.read()
+
+                self.ui.lineEdit.setText(str(filenames))
+                self.ui.TextEdit.setPlainText(data)
+
+        # def add_name(self):
+        #     self.ui.TextEdit.appendPlainText('你好，白月黑羽')
+       
+if __name__ == '__main__':
+    # app = QApplication([])
+    # stats = Stats()
+    # stats.ui.show()
+    # app.exec_()
+
+    app=QApplication(sys.argv)
+    ex=Stats()
+    ex.ui.show()
+    sys.exit(app.exec_())
