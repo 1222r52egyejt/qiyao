@@ -57,18 +57,21 @@ class Stats(QWidget):
                 result = traverse_data[0].split()
                 stop = time()
                 # stop = datetime.datetime.now
-
-            QMessageBox.about(self.ui,
-                                '统计结果1',
-                                f'''最后剩下的是：\n{result}
-                                \n淘汰顺序为：\n{list(delData)}
-                                '''
-                                )
-            QMessageBox.about(self.ui,
-                                '统计结果2',
-                                f'''
-                                遍历耗费的时间：\n{(stop - start):.20f}'''
-                                )
+            # print(f'一共耗费了{(stop - start):.20f}秒。')
+            self.ui.plainTextEdit.setPlainText(str(result))
+            self.ui.plainTextEdit_3.setPlainText(str(list(delData)))
+            self.ui.plainTextEdit_2.setPlainText(f'{(stop - start):.20f}')
+            # # QMessageBox.about(self.ui,
+            #                     '统计结果1',
+            #                     f'''最后剩下的是：\n{result}
+            #                     \n淘汰顺序为：\n{list(delData)}
+            #                     '''
+            #                     )
+            # QMessageBox.about(self.ui,
+            #                     '统计结果2',
+            #                     f'''
+            #                     遍历耗费的时间：\n{(stop - start):.20f}'''
+            #                     )
         except:
             print("输入数据不能为空")
         
@@ -114,6 +117,7 @@ class Stats(QWidget):
             try:
                 with open(filenames[0], "w", encoding='utf-8')as f:
                         f.write(dict)
+                self.ui.lineEdit_2.setText(filenames[0])
             except FileNotFoundError:
                 pass
 

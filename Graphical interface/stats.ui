@@ -15,7 +15,7 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_4">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_2" stretch="9,6,1,1,1">
+    <layout class="QVBoxLayout" name="verticalLayout_2" stretch="5,5,1,1,1,0">
      <item>
       <widget class="QPlainTextEdit" name="TextEdit">
        <property name="placeholderText">
@@ -24,11 +24,18 @@
       </widget>
      </item>
      <item>
+      <widget class="QPlainTextEdit" name="plainTextEdit_3">
+       <property name="placeholderText">
+        <string>输出结果：淘汰顺序</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
         <widget class="QPlainTextEdit" name="plainTextEdit">
          <property name="placeholderText">
-          <string>输出结果：最后幸存的是、淘汰顺序</string>
+          <string>输出结果：最后幸存的是</string>
          </property>
         </widget>
        </item>
@@ -43,19 +50,6 @@
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
        <item>
         <widget class="QPushButton" name="pushButton_4">
          <property name="sizePolicy">
@@ -79,17 +73,7 @@
         </widget>
        </item>
        <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
+        <widget class="QLineEdit" name="lineEdit_2"/>
        </item>
       </layout>
      </item>
