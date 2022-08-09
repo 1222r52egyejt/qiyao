@@ -161,7 +161,7 @@
     </layout>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout" stretch="">
+    <layout class="QVBoxLayout" name="verticalLayout">
      <property name="spacing">
       <number>60</number>
      </property>
