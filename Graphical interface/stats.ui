@@ -17,14 +17,14 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="5,5,1,1,1,0">
      <item>
-      <widget class="QPlainTextEdit" name="TextEdit">
+      <widget class="QPlainTextEdit" name="TextEdit_josephus">
        <property name="placeholderText">
         <string>请输入进行约瑟夫遍历的人名</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="plainTextEdit_3">
+      <widget class="QPlainTextEdit" name="TextEdit_pass_order">
        <property name="placeholderText">
         <string>输出结果：淘汰顺序</string>
        </property>
@@ -33,14 +33,14 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QPlainTextEdit" name="plainTextEdit">
+        <widget class="QPlainTextEdit" name="TextEdit_svrvivor">
          <property name="placeholderText">
           <string>输出结果：最后幸存的是</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPlainTextEdit" name="plainTextEdit_2">
+        <widget class="QPlainTextEdit" name="TextEdit_timelast">
          <property name="placeholderText">
           <string>完成遍历耗费的时间</string>
          </property>
@@ -51,7 +51,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="pushButton_save">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -73,21 +73,21 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="save_lineEdit"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="pushButton_select">
          <property name="text">
           <string>请选择文件</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="select_lineEdit"/>
        </item>
       </layout>
      </item>
@@ -107,7 +107,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="spinBox_2">
+        <widget class="QSpinBox" name="spinBox_start_id">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -133,7 +133,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="spinBox">
+        <widget class="QSpinBox" name="spinBox_step">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -146,7 +146,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="Button">
+        <widget class="QPushButton" name="Button_josephus">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
