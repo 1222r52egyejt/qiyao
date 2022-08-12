@@ -16,6 +16,7 @@ import sys
 from PySide2.QtCore import *
 from PySide2.QtWidgets import *
 from PySide2.QtGui import *
+result = str
 class Stats(QWidget):
 
     def __init__(self):
@@ -27,6 +28,7 @@ class Stats(QWidget):
         self.ui.Button_josephus.clicked.connect(self.traverse)
         self.ui.pushButton_select.clicked.connect(self.getFiles)
         self.ui.pushButton_save.clicked.connect(self.saveFiles)
+        self.ui.pushButton_save.clicked.connect(self.result_check)
            
     def traverse(self):
     # def traverse(self, stepNum, start_id):
@@ -65,12 +67,15 @@ class Stats(QWidget):
             self.ui.TextEdit_svrvivor.setPlainText(str(result))
             self.ui.TextEdit_pass_order.setPlainText(str(list(delData)))
             self.ui.TextEdit_timelast.setPlainText(f'{(stop - start):.20f}')
+
         
         except:
             # logger.addHandler(rf_handler)
             logger = logger_config(log_path=path+'/Desktop/qiyao/Graphical interface/log.txt', logging_name='josephus_log')
             logger.error("输入数据为空")
             # print("输入数据不能为空")
+
+       
 
         
     #读取文件
@@ -121,6 +126,15 @@ class Stats(QWidget):
                 # logger.error("找不到文件")
                 pass
 
+    def result_check(self):
+    #实例化QFileDialog
+       
+        info = self.ui.TextEdit_svrvivor.toPlainText() #获取文本框中的内容
+        dict = info
+    
+        with open(path+'/Desktop/unit_test_josephus.txt', "w", encoding='utf-8')as f:
+                    f.write(dict)
+           
                 
        
 if __name__ == '__main__':
