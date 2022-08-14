@@ -1,0 +1,8 @@
+
+test_traverse (test_traverse_func.TestTraverseFunc)
+Test method add(a, b) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+OK

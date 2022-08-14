@@ -1,4 +1,3 @@
-from traverse_by_step_graphical_interface import Stats 
 import unittest
 import os
 path = os.path.realpath(os.curdir)#获取当前目录的绝对路径

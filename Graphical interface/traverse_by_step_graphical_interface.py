@@ -134,8 +134,7 @@ class Stats(QWidget):
     
         with open(path+'/Desktop/unit_test_josephus.txt', "w", encoding='utf-8')as f:
                     f.write(dict)
-           
-                
+
        
 if __name__ == '__main__':
 
