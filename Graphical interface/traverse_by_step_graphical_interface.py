@@ -64,7 +64,7 @@ class Stats(QWidget):
                 stop = time()
                 # stop = datetime.datetime.now
             # print(f'一共耗费了{(stop - start):.20f}秒。')
-            self.ui.TextEdit_svrvivor.setPlainText(str(result))
+            self.ui.TextEdit_survivor.setPlainText(str(result))
             self.ui.TextEdit_pass_order.setPlainText(str(list(delData)))
             self.ui.TextEdit_timelast.setPlainText(f'{(stop - start):.20f}')
 
@@ -73,6 +73,8 @@ class Stats(QWidget):
             # logger.addHandler(rf_handler)
             logger = logger_config(log_path=path+'/Desktop/qiyao/Graphical interface/log.txt', logging_name='josephus_log')
             logger.error("输入数据为空")
+            # logger.debug("输入数据为空")
+
             # print("输入数据不能为空")
 
        
@@ -129,11 +131,23 @@ class Stats(QWidget):
     def result_check(self):
     #实例化QFileDialog
        
-        info = self.ui.TextEdit_svrvivor.toPlainText() #获取文本框中的内容
+        info = self.ui.TextEdit_survivor.toPlainText() #获取文本框中的内容
         dict = info
     
         with open(path+'/Desktop/unit_test_josephus.txt', "w", encoding='utf-8')as f:
                     f.write(dict)
+
+        ifo_start_id = self.ui.spinBox_start_id.value() #获取文本框中的内容
+        dict_1 = ifo_start_id
+    
+        with open(path+'/Desktop/start_id.txt', "w", encoding='utf-8')as f:
+                    f.write(str(dict_1))
+
+        ifo_stepNum = self.ui.spinBox_step.value() #获取文本框中的内容
+        dict_2 = ifo_stepNum
+    
+        with open(path+'/Desktop/stepNum.txt', "w", encoding='utf-8')as f:
+                    f.write(str(dict_2))
 
        
 if __name__ == '__main__':

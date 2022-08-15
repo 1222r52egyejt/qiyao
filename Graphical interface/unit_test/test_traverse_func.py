@@ -4,8 +4,13 @@ import unittest
 from traverse_func import *
 
 with open(path+'/Desktop/unit_test_josephus.txt', "r", encoding='utf-8')as f:
-                #接受读取的内容，并显示到多行文本框中
-                data=f.read()
+                result=f.read()
+
+with open(path+'/Desktop/start_id.txt', "r", encoding='utf-8')as f:
+                start_id=int(f.read())
+
+with open(path+'/Desktop/stepNum.txt', "r", encoding='utf-8')as f:
+                stepNum=int(f.read())
 
 class TestTraverseFunc(unittest.TestCase):
     """Test mathfuc.py"""
@@ -28,9 +33,17 @@ class TestTraverseFunc(unittest.TestCase):
 #约瑟夫遍历功能测试
     def test_traverse(self):
         """Test method add(a, b)"""
-        print ("traverse")
-        self.assertEqual(data, str(traverse(0, 3)))
- 
+        print ("traverse_function_test")
+        self.assertEqual(result, str(traverse(start_id, stepNum)))
+
+#输入(步长)测试
+    def test_stepNum(self):
+        print ("stepNum_in_test")
+        if(stepNum > 0):
+            return 1
+
+        self.assertEqual(stepNum, 1)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity = 2)

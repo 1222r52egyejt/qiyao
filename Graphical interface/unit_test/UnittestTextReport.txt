@@ -6,3 +6,11 @@ Test method add(a, b) ... ok
 Ran 1 test in 0.004s
 
 OK
+test_stepNum (test_traverse_func.TestTraverseFunc) ... ok
+test_traverse (test_traverse_func.TestTraverseFunc)
+Test method add(a, b) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+OK

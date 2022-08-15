@@ -33,7 +33,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QPlainTextEdit" name="TextEdit_svrvivor">
+        <widget class="QPlainTextEdit" name="TextEdit_survivor">
          <property name="placeholderText">
           <string>输出结果：最后幸存的是</string>
          </property>

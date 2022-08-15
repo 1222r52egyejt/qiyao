@@ -4,7 +4,6 @@ from collections import deque
 
 path = os.path.realpath(os.curdir)#获取当前目录的绝对路径
 f =  open(path+'/Desktop/ceshi.txt', "r", encoding='utf-8')
-                #接受读取的内容，并显示到多行文本框中
 lines = f.readlines()
 # print(lines)
 
