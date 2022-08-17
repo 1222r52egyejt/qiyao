@@ -128,27 +128,6 @@ class Stats(QWidget):
                 # logger.error("找不到文件")
                 pass
 
-    def result_check(self):
-    #实例化QFileDialog
-       
-        info = self.ui.TextEdit_survivor.toPlainText() #获取文本框中的内容
-        dict = info
-    
-        with open(path+'/Desktop/unit_test_josephus.txt', "w", encoding='utf-8')as f:
-                    f.write(dict)
-
-        ifo_start_id = self.ui.spinBox_start_id.value() #获取文本框中的内容
-        dict_1 = ifo_start_id
-    
-        with open(path+'/Desktop/start_id.txt', "w", encoding='utf-8')as f:
-                    f.write(str(dict_1))
-
-        ifo_stepNum = self.ui.spinBox_step.value() #获取文本框中的内容
-        dict_2 = ifo_stepNum
-    
-        with open(path+'/Desktop/stepNum.txt', "w", encoding='utf-8')as f:
-                    f.write(str(dict_2))
-
        
 if __name__ == '__main__':
 

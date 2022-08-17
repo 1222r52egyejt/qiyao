@@ -1,48 +1,49 @@
-# -*- coding: utf-8 -*-
 
 import unittest
 from traverse_func import *
 
-with open(path+'/Desktop/unit_test_josephus.txt', "r", encoding='utf-8')as f:
-                result=f.read()
-
-with open(path+'/Desktop/start_id.txt', "r", encoding='utf-8')as f:
-                start_id=int(f.read())
-
-with open(path+'/Desktop/stepNum.txt', "r", encoding='utf-8')as f:
-                stepNum=int(f.read())
 
 class TestTraverseFunc(unittest.TestCase):
-    """Test mathfuc.py"""
   
-    def setUp(self):
-        print ("do something before test.Prepare environment.")
+#约瑟夫功能测试
+    def test_josefu_function(self):
+        print ("josefu_function_test")
+        traverse_name = ['小王','红红','小明','小曹','曹总','然然']
+        expect_order = ['红红','小明','小曹','曹总','然然','小王']
 
-    def tearDown(self):
-        print ("do something after test.Clean up.")
- 
+        self.assertEqual(expect_order, traverse(0, 1, traverse_name))
 
-    @classmethod
-    def setUpClass(cls):
-        print ("This setUpClass() method only called once.")
-
-    @classmethod
-    def tearDownClass(cls):
-        print ("This tearDownClass() method only called once too.")
-
-#约瑟夫遍历功能测试
-    def test_traverse(self):
-        """Test method add(a, b)"""
-        print ("traverse_function_test")
-        self.assertEqual(result, str(traverse(start_id, stepNum)))
-
-#输入(步长)测试
+#输入(stepNum)测试
     def test_stepNum(self):
-        print ("stepNum_in_test")
-        if(stepNum > 0):
-            return 1
+        print ("stepNum_test")
+        traverse_name = ['小王','红红','小明','小曹','曹总','然然']
+        expect_order = ['小曹','小王','曹总','小明','然然','红红']
 
-        self.assertEqual(stepNum, 1)
+        self.assertEqual(expect_order, traverse(0, 3, traverse_name))
+
+#输入(start_id)测试
+    def test_start_id(self):
+        print ("start_id_test")
+        traverse_name = ['小王','红红','小明','小曹','曹总','然然']
+        expect_order = ['小明','然然','小曹','红红','曹总','小王']
+
+        self.assertEqual(expect_order, traverse(-1, 3, traverse_name))
+
+#上边界测试
+    def test_upper_border(self):
+        print ("upper_border_test")
+        traverse_name = ['小王','红红','小明','小曹','曹总','然然']
+        expect_order = ['红红','小明','小曹','曹总','然然','小王']
+
+        self.assertEqual(expect_order, traverse(6, 1, traverse_name))
+#下边界测试
+    def test_lower_border(self):
+        print ("lower_border_test")
+        traverse_name = ['小王','红红','小明','小曹','曹总','然然']
+        expect_order = ['小王','红红','小明','小曹','曹总','然然']
+
+        self.assertEqual(expect_order, traverse(-7, 1, traverse_name))
+
 
 
 if __name__ == '__main__':
